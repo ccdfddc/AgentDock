@@ -1,0 +1,54 @@
+{
+  "name": "agentdock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.mjs",
+  "description": "Open-source local multi-agent desktop/web MVP",
+  "license": "MIT",
+  "scripts": {
+    "api": "node server/local-api.mjs",
+    "dev": "vite",
+    "desktop": "electron .",
+    "desktop:build": "vite build && electron-builder",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "electron": "^41.4.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.2",
+    "vitest": "^3.1.1"
+  },
+  "build": {
+    "appId": "com.agentdock.app",
+    "productName": "AgentDock",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**",
+      "electron/**",
+      "server/**",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "asar": true
+  }
+}
