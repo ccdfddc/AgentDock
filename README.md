@@ -2,6 +2,10 @@
 
 Open-source local multi-agent aggregation platform for desktop and web. Connect multiple AI agents behind one unified interface, route work by mention or broadcast, and keep the whole stack local when you want it.
 
+## 30-Second Summary
+
+AgentDock is a hub for AI agents. Add built-in agents or any OpenAI-compatible model, and they show up as separate agents in one place. Send a prompt to one agent, broadcast to all of them, or let the selected butler coordinate silently. It works as a web app or as a packaged macOS desktop app.
+
 ## What You Get
 
 - a local web app and a packaged macOS desktop app
@@ -98,7 +102,7 @@ The adapter interface (`src/adapters/interface.ts`) supports pluggable transport
 - `mock` - In-process mock (MVP default)
 - `stdio` - Planned: subprocess over stdin/stdout for agents that support automation
 
-Register new transports via `registerAdapter(transport, factory)`.
+Register new transports via `registerAdapter(transport, factory)`. 
 
 ## Tech Stack
 
